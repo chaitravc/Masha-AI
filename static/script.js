@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             processor.connect(audioContext.destination);
 
             // Generate WebSocket URL based on current host
-            const wsUrl = `ws://${window.location.host}/ws`;
+            const wsUrl = `wss://${window.location.host}/ws`;
             ws = new WebSocket(wsUrl);
 
             ws.onopen = () => {
