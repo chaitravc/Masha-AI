@@ -1,0 +1,384 @@
+/* ========================= Full Page Background ========================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+}
+
+/* ========================= Masha Image Positioning (Top Left) ========================= */
+.masha-outside-image-top {
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    width: 140px;
+    height: 200px;
+    z-index: 1;
+}
+
+/* ========================= Masha Image Positioning (Bottom Right) ========================= */
+.masha-outside-image-bottom {
+    position: absolute;
+    bottom: 4%;
+    right: 3%;
+    width: 150px;
+    height: 230px;
+    z-index: 0;
+}
+
+/* ========================= Pop-out Container ========================= */
+.pop-out-container {
+    background: linear-gradient(135deg, #4b2353, #722d4f);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+}
+
+/* ========================= Header ========================= */
+.chat-header {
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.chat-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    color: #ffcc00;
+    text-shadow: 0 0 20px rgba(255, 204, 0, 0.9),
+                  0 0 35px rgba(255, 204, 0, 0.7),
+                  0 0 60px rgba(255, 204, 0, 0.5);
+    background: rgba(255, 204, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+/* ========================= Subtitle ========================= */
+.assistant-subtitle {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+}
+
+/* ========================= Settings Button (Heart) ========================= */
+.settings-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.settings-btn svg {
+    width: 30px;
+    height: 30px;
+    fill: #ffcc00;
+    stroke: none;
+    filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.7));
+    transition: transform 0.3s ease;
+}
+
+.settings-btn:hover svg {
+    transform: scale(1.2);
+}
+
+/* ========================= Chat Log ========================= */
+.chat-log {
+    flex-grow: 1;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    color: white;
+    margin-top: 20px;
+    font-size: 18px;
+    max-height: 400px;
+    word-wrap: break-word;
+    line-height: 1.5;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.chat-log::-webkit-scrollbar {
+    display: none;
+}
+
+/* Style for each chat message */
+.chat-log .message {
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.chat-log .message.user {
+    background: rgba(255, 204, 0, 0.15);
+    border-left: 4px solid #ffcc00;
+    margin-left: auto;
+    max-width: 80%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.chat-log .message.assistant {
+    background: rgba(255, 255, 255, 0.1);
+    border-right: 4px solid #fff;
+    margin-right: auto;
+    max-width: 80%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================= Mic Button & Status ========================= */
+.button-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    flex-shrink: 0;
+}
+
+.record-btn {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 204, 0, 0.15);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border: none;
+    color: white;
+}
+
+/* Make SVG mic bold & glowing */
+.record-btn svg {
+    filter: drop-shadow(0 0 6px rgba(255, 204, 0, 0.9));
+    width: 40px;
+    height: 40px;
+    stroke-width: 1.5px;
+    fill: #ffcc00;
+}
+
+.record-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Recording animation */
+.record-btn.recording {
+    animation: pulse 1.5s infinite;
+    background: rgba(255, 204, 0, 0.3);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.7); }
+    70% { box-shadow: 0 0 0 25px rgba(255, 204, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 204, 0, 0); }
+}
+
+/* ========================= Status Display ========================= */
+#statusDisplay {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffcc00;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+}
+
+/* ========================= API Key Modal ========================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(75, 35, 83, 0.9), rgba(114, 45, 79, 0.9));
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #ffcc00;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+.api-key-header {
+    font-size: 1.8rem;
+    color: #ffcc00;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+.api-key-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f0e68c;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 2px solid #ffcc00;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: white;
+}
+
+.save-btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: 2px solid #ffcc00;
+    background: #ffcc00;
+    color: #4b2353;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+.save-btn:hover {
+    transform: scale(1.02);
+    background: #f0e68c;
+}
+
+.status-message {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* ========================= Responsive Design ========================= */
+@media (max-width: 768px) {
+    .pop-out-container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+    .chat-header h1 {
+        font-size: 1.8rem;
+        padding: 8px 15px;
+    }
+
+    .assistant-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .record-btn {
+        width: 100px;
+        height: 100px;
+    }
+
+    .record-btn svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .close-btn {
+        font-size: 2rem;
+    }
+
+    .api-key-header {
+        font-size: 1.5rem;
+    }
+}
