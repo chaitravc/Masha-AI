@@ -6,5 +6,6 @@ jinja2
 assemblyai
 google-generativeai
 murf
-tavily
+tavily-python
 websockets
+
