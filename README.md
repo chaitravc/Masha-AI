@@ -52,6 +52,45 @@ When you click the 🎙️ mic button, you can talk to her directly, and she wil
 
 ---
 
+
+
+
+##  Project Structure
+
+```bash
+Masha-AI/
+├── Lib/                   # Virtual environment libraries
+├── Scripts/               # Virtual environment scripts
+├── services/              # Core backend logic
+│ ├── init.py
+│ ├── llm.py               # Handles LLM (Google Gemini) logic
+│ ├── news.py              # Fetches and formats news (funny narration)
+│ ├── roast.py             # Roast mode responses
+│ ├── stt.py               # Speech-to-Text using AssemblyAI
+│ └── tts.py               # Text-to-Speech using Murf AI
+│
+├── static/                # Static frontend assets
+│ ├── fallback.mp3         # Default fallback audio
+│ ├── m.jpg                # Image asset
+│ ├── mab.jpg              # Image asset
+│ ├── masha.jpg            # Masha theme image
+│ ├── script.js            # Frontend JS (mic, streaming, API calls)
+│ └── style.css            # Frontend styling
+│
+├── templates/             # HTML templates
+│ └── index.html           # Main frontend interface
+│
+├── uploads/               # (Optional) Uploads directory
+│
+├── .env                   # Environment variables (API keys)
+├── config.py              # App configuration
+├── main.py                # FastAPI entry point
+├── requirements.txt       # Python dependencies
+├── schemas.py             # Data models/schemas
+└── .gitignore             # Git ignore file
+````
+
+
 ##  Setup Instructions
 
 ###  Clone Repository
