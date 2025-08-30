@@ -1,8 +1,8 @@
-# Masha AI 
+# Masha's AI 
 
 
 
-Meet **Masha AI** – a fun, Masha and the Bear–themed conversational AI voice agent that listens, understands, and responds to you in real-time, both in **text** and **voice** form.  
+Meet **Masha's AI** – a fun, Masha and the Bear–themed conversational AI voice agent that listens, understands, and responds to you in real-time, both in **text** and **voice** form.  
 
 The persona of the agent is **Masha**, the mischievous little character from the cartoon *Masha and the Bear*.  
 When you click the 🎙️ mic button, you can talk to her directly, and she will respond in her unique voice and personality.  
@@ -145,7 +145,8 @@ A working **end-to-end conversational Masha-themed AI voice agent** with extende
 
 * **Talk to Masha** in real-time
 * **Get funny news updates**
-* **Get roasted by Masha** when you dare to ask 
+* **Get roasted by Masha** when you dare to ask
+* **Try deployed project here**: https://masha-heree.onrender.com
 
 ---
 
