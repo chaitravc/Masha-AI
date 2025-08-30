@@ -1,6 +1,5 @@
 # Masha AI 
 
-# Masha AI Voice Agent 🎤
 
 
 Meet **Masha AI** – a fun, Masha and the Bear–themed conversational AI voice agent that listens, understands, and responds to you in real-time, both in **text** and **voice** form.  
