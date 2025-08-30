@@ -9,12 +9,6 @@ When you click the 🎙️ mic button, you can talk to her directly, and she wil
 
 ---
 
-##  Final Documentation
-
-Today’s task was about **updating the README.md** file to reflect the **new features** added to the agent.  
-We refer to the structure of the previously deployed project, but now include enhancements made in this version.  
-
----
 
 ##  Task Overview
 - Updated the README.md with **newly added features**  
@@ -26,7 +20,7 @@ We refer to the structure of the previously deployed project, but now include en
 
 ---
 
-## ⚙️ How It Works
+##  How It Works
 
 ###  Client Side
 - Clicks mic button to record audio  
