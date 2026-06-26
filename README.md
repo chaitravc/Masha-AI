@@ -146,6 +146,12 @@ A working **end-to-end conversational Masha-themed AI voice agent** with extende
 * **Talk to Masha** in real-time
 * **Get funny news updates**
 * **Get roasted by Masha** when you dare to ask
+
+  
+
+https://github.com/user-attachments/assets/929c044f-8962-4368-bcf2-8bdec59ce2b2
+
+
 * **Try deployed project here**: https://masha-heree.onrender.com
 
 ---
